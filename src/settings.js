@@ -1,6 +1,6 @@
 module.exports = {
 
-  title: '家政服务平台',
+  title: '校园二手平台',
 
   /**
    * @type {boolean} true | false

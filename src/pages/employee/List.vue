@@ -72,7 +72,7 @@ export default {
           cancelButtonText: '取消',
           type: 'warning'
         }).then(() => {
-            let url="http://localhost:6677/waiter/deleteById?id="+id;
+            let url="http://47.106.244.1:5588/waiter/deleteById?id="+id;
             request.get(url).then((response)=>{
               //1.刷新数据
               this.loadData();
@@ -90,13 +90,13 @@ export default {
             this.form=row;
         },
         loadData(){
-            let url="http://localhost:6677/waiter/findAll";
+            let url="http://47.106.244.1:5588/waiter/findAll";
             request.get(url).then((response)=>{
                 this.employees=response.data;
             })
         },
         submitHandler(){
-            let url="http://localhost:6677/waiter/saveOrUpdate";
+            let url="http://47.106.244.1:5588/waiter/saveOrUpdate";
             request({
                 url,
                 method:"POST",

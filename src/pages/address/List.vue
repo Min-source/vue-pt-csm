@@ -75,7 +75,7 @@ export default {
     //用于存放网页中用于调用的方法
     methods:{
         loadData(){
-            let url="http://localhost:6677/address/findAll"
+            let url="http://47.106.244.1:5588/address/findAll"
             request.get(url).then((response)=>{
             this.addresss=response.data;
         })
@@ -83,7 +83,7 @@ export default {
         submitHandler(){
     
             //通过request与后台进行交互，并且携带参数
-             let url="http://localhost:6677/address/saveOrUpdate"
+             let url="http://47.106.244.1:5588/address/saveOrUpdate"
              request({
                  url,
                  method:"POST",
@@ -109,7 +109,7 @@ export default {
           cancelButtonText: '取消',
           type: 'warning'
         }).then(() => {
-            let url="http://localhost:6677/address/deleteById?id="+id;
+            let url="http://47.106.244.1:5588/address/deleteById?id="+id;
             request.get(url).then((response)=>{
                 //刷新sju 
                   this.loadData();

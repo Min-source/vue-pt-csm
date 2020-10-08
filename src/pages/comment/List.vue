@@ -62,7 +62,7 @@ export default {
    
         methods:{
              loadData(){
-        let url= 'http://localhost:6677/comment/findAll'
+        let url= 'http://47.106.244.1:5588/comment/findAll'
         request.get(url).then((response)=>{
             this.comment=response.data
 
@@ -77,14 +77,14 @@ export default {
 
         },
         loadOrder(){
-            let url="http://localhost:6677/order/findAll"
+            let url="http://47.106.244.1:5588/order/findAll"
             request.get(url).then((response)=>{
             this.options=response.data;
         })
 
         },
         submitHandler(){
-            let url = 'http://localhost:6677/comment/saveOrUpdate'
+            let url = 'http://47.106.244.1:5588/comment/saveOrUpdate'
             request({
              url,
                method:"POST",
@@ -115,7 +115,7 @@ export default {
               cancelButtonText: '取消',
               type: 'warning'
             }).then(() => { 
-              let url="http://localhost:6677/comment/deleteById?id="+id;
+              let url="http://47.106.244.1:5588/comment/deleteById?id="+id;
               request.get(url).then((response)=>{
                 this.loadData();
                   this.$message({
