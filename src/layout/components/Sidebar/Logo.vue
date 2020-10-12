@@ -25,7 +25,7 @@ export default {
   data() {
     return {
       title: '校园二手平台',
-      logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'
+      logo: 'http://47.100.92.238/%E4%BA%8C%E6%89%8B.png'
     }
   }
 }

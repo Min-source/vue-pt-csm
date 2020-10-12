@@ -55,7 +55,7 @@ export default {
     //用于存放网页中需要调用的方法
     methods:{
         loadData(){
-            let url = "http://47.106.244.1:5588/customer/findAll";
+            let url = "http://47.100.92.238:5588/customer/findAll";
             request.get(url).then((response)=>{
             //将查询结果设置到customers中，箭头函数中的this指向外部函数实例
             this.customers = response.data;
@@ -67,7 +67,7 @@ export default {
             //request.post(url,this.form)
             //查询字符串 type=customer&age=12
             //通过request与后台进行交互，并且要携带参数
-            let url = "http://47.106.244.1:5588/customer/saveOrUpdate";
+            let url = "http://47.100.92.238:5588/customer/saveOrUpdate";
             request({    //()表示方法调用
                 url,
                 method:"POST",
@@ -105,7 +105,7 @@ export default {
           type: 'warning'
         }).then(() => {
             //调用后台接口，完成删除操作
-            let url = "http://47.106.244.1:5588/customer/deleteById?id="+id;
+            let url = "http://47.100.92.238:5588/customer/deleteById?id="+id;
             request.get(url).then((response)=>{
                 //1.刷新数据
                 this.loadData();

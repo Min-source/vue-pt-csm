@@ -57,14 +57,14 @@ export default {
    
         methods:{
              loadData(){
-        let url= 'http://47.106.244.1:5588/category/findAll'
+        let url= 'http://47.100.92.238:5588/category/findAll'
         request.get(url).then((response)=>{
             this.category=response.data
 
         })
         },
         loadFu(){
-           let url= 'http://47.106.244.1:5588/product/findAll'
+           let url= 'http://47.100.92.238:5588/product/findAll'
         request.get(url).then((response)=>{
             this.options=response.data
 
@@ -86,7 +86,7 @@ export default {
 
         },
         submitHandler(){
-            let url = 'http://47.106.244.1:5588/category/saveOrUpdate'
+            let url = 'http://47.100.92.238:5588/category/saveOrUpdate'
             request({
              url,
                method:"POST",
@@ -116,7 +116,7 @@ export default {
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => { 
-        let url="http://47.106.244.1:5588/category/deleteById?id="+id;
+        let url="http://47.100.92.238:5588/category/deleteById?id="+id;
         request.get(url).then((response)=>{
           this.loadData();
             this.$message({

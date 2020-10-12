@@ -98,14 +98,14 @@ export default {
     },
     // 加载员工信息
     loadEmployees(){
-      let url = "http://47.106.244.1:5588/waiter/findAll";
+      let url = "http://47.100.92.238:5588/waiter/findAll";
       request.get(url).then(response=>{
         this.employees = response.data;
       })
     },
     // 加载订单信息
     loadData(){
-      let url = "http://47.106.244.1:5588/order/queryPage"
+      let url = "http://47.100.92.238:5588/order/queryPage"
       if(this.params.status === "全部"){
         delete this.params.status;
       }
@@ -122,7 +122,7 @@ export default {
       })
     },
     submitHandler(){
-      let url = "http://47.106.244.1:5588/order/sendOrder";
+      let url = "http://47.100.92.238:5588/order/sendOrder";
       request({
         url,
         method:"GET",
@@ -158,7 +158,7 @@ export default {
     }
   },
   loadProduct(){
-          let url="http://47.106.244.1:5588/product/findAll"
+          let url="http://47.100.92.238:5588/product/findAll"
             request.get(url).then((response)=>{
             this.products=response.data;
         })

@@ -1,8 +1,7 @@
 <template>
   <div class="dashboard-container">
-    <div class="dashboard-text">
-      <div>校园二手平台是为学生提供最安全方便的校园二手市场。是校园内的个人闲置物品交易平台。</div>
-      <div>可以快速发布商品，满足同学和老师查询和发布二手商品的需求。</div>
+    <div class="dashboard-text" style="font-family:'STHupo'">
+      校园二手平台是是校园内的个人闲置物品交易平台,可以快速发布商品，满足同学和老师查询和发布二手商品的需求。
     </div>
     <el-carousel indicator-position="outside" height="450px">
       <el-carousel-item v-for="item in 4" :key="item">

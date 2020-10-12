@@ -34,7 +34,7 @@
          :title="title"
          :visible.sync="visible"
          width="60%">
-         ---{{form}}
+         <!-- ---{{form}} -->
          <el-form :model="form" label-width="80px">
              <el-form-item label="产品名称">
                  <el-input v-model="form.name" ></el-input>
@@ -58,7 +58,7 @@
              <el-form-item label="图片" >
                 <el-upload
                         class="upload-demo"
-                        action="http://47.106.244.1:5588///file/upload"
+                        action="http://47.100.92.238:5588///file/upload"
                         :on-success="uploadSuccessHandler"
                         :file-list="fileList"
                         list-type="picture">
@@ -85,26 +85,26 @@ export default {
     methods:{
         uploadSuccessHandler(response){
             console.log(response.data.id);
-            let photo="http://47.106.244.1:5588/group1/"+response.data.id;
+            let photo="http://47.100.92.238:5588/group1/"+response.data.id;
             this.form.photo=photo;
         
         },
             loadCategory(){
-      let url = "http://47.106.244.1:5588/category/findAll"
+      let url = "http://47.100.92.238:5588/category/findAll"
       request.get(url).then((response)=>{
         // 将查询结果设置到products中，this指向外部函数的this
         this.options = response.data;
       })
     },
         loadData(){
-            let url="http://47.106.244.1:5588/product/findAll"
+            let url="http://47.100.92.238:5588/product/findAll"
             request.get(url).then((response)=>{
             this.products=response.data;
         })
         },
         submitHandler(){
             //通过request与后台进行交互，并且携带参数
-             let url="http://47.106.244.1:5588/product/saveOrUpdate"
+             let url="http://47.100.92.238:5588/product/saveOrUpdate"
              request({
                  url,
                  method:"POST",
@@ -130,7 +130,7 @@ export default {
           cancelButtonText: '取消',
           type: 'warning'
         }).then(() => {
-            let url="http://47.106.244.1:5588/product/deleteById?id="+id;
+            let url="http://47.100.92.238:5588/product/deleteById?id="+id;
             request.get(url).then((response)=>{
                 //刷新sju 
                   this.loadData();
